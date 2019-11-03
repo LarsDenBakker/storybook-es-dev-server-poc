@@ -31,6 +31,10 @@ export default {
           'mdx',
           'DocsContainer',
           'makeStoryFn',
+          'getCustomElements',
+          'isValidComponent',
+          'isValidMetaData',
+          'DocsPage'
         ],
       },
     }),
