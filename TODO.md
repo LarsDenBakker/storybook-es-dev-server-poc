@@ -8,3 +8,4 @@
 - Investigate caching strategies
 - Investigate tree shaking / compiling smaller bundle
 - Review if all addons are worth their weight
+- Allow injecting things in <head>
