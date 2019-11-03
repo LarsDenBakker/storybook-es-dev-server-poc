@@ -35,16 +35,11 @@ async function transformMdxToJS(url) {
   );
 }
 
-module.exports = async function mdxToJS(ctx, next) {
-  if (ctx.url.endsWith('.mdx')) {
-    const js = await transformMdxToJS(ctx.url);
-    if (js) {
-      ctx.status = 200;
-      ctx.body = js;
-      ctx.response.set('content-type', 'text/javascript');
-      return;
+module.exports = async function mdxToJS({ url, body }) {
+  if (url.endsWith('.mdx')) {
+    const newBody = await transformMdxToJS(url);
+    if (newBody) {
+      return { body: newBody, contentType: 'text/javascript' }
     }
   }
-
-  return next();
 }

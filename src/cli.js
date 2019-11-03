@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 const { createConfig, startServer } = require('es-dev-server');
 const readCommandLineArgs = require('./command-line-args');
-const createServeStorybookMiddleware = require('./middlewares/serve-storybook');
-const mdxToJSMiddleware = require('./middlewares/mdx-to-js');
+const createServeStorybookTransformer = require('./transformers/serve-storybook');
+const mdxToJSTransformer = require('./transformers/mdx-to-js');
 
 const config = readCommandLineArgs();
 
-config.esDevServerConfig.customMiddlewares = [
-  createServeStorybookMiddleware({ storybookConfigDir: config.storybookServerConfig['storybook-config'] }),
-  mdxToJSMiddleware,
-  ...(config.customMiddlewares || []),
+config.esDevServerConfig.responseTransformers = [
+  mdxToJSTransformer,
+  createServeStorybookTransformer({ storybookConfigDir: config.storybookServerConfig['storybook-config'] }),
+  ...(config.esDevServerConfig.responseTransformers || []),
 ];
 
 startServer(createConfig(config.esDevServerConfig));

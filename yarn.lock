@@ -29,7 +29,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.1.0", "@babel/core@^7.3.3", "@babel/core@^7.4.5", "@babel/core@^7.6.4":
+"@babel/core@^7.1.0", "@babel/core@^7.3.3", "@babel/core@^7.6.4":
   version "7.6.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.6.4.tgz#6ebd9fe00925f6c3e177bb726a188b5f578088ff"
   integrity sha512-Rm0HGw101GY8FTzpWSyRbki/jzq+/PkNQJ+nSulrdY6gFGOsNseCqD6KHRYe2E+EdzuBdr2pxCp6s4Uk6eJ+XQ==
@@ -627,7 +627,7 @@
     "@babel/helper-regex" "^7.4.4"
     regexpu-core "^4.6.0"
 
-"@babel/preset-env@^7.4.5":
+"@babel/preset-env@^7.0.0", "@babel/preset-env@^7.4.5":
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.6.3.tgz#9e1bf05a2e2d687036d24c40e4639dc46cef2271"
   integrity sha512-CWQkn7EVnwzlOdR5NOm2+pfgSNEZmvGjOhlCHBDq0J8/EStr+G+FvPEiz9B56dR6MoiUFjXhfE4hjLoAKKJtIQ==
@@ -3685,7 +3685,7 @@ deep-object-diff@^1.1.0:
   resolved "https://registry.yarnpkg.com/deep-object-diff/-/deep-object-diff-1.1.0.tgz#d6fabf476c2ed1751fc94d5ca693d2ed8c18bc5a"
   integrity sha512-b+QLs5vHgS+IoSNcUE4n9HP2NwcHj7aqnJWsjPtuG75Rh5TOaGt0OjAYInh77d5T16V5cRDC+Pw/6ZZZiETBGw==
 
-deepmerge@^3.2.0, deepmerge@^3.3.0:
+deepmerge@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
   integrity sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==
@@ -4096,13 +4096,13 @@ es-abstract@^1.12.0, es-abstract@^1.13.0, es-abstract@^1.14.2, es-abstract@^1.15
     string.prototype.trimright "^2.1.0"
 
 es-dev-server@^1.21.0:
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/es-dev-server/-/es-dev-server-1.21.0.tgz#e1c351644e831c4526a411ef18c1e6ef2ff9a8a9"
-  integrity sha512-l5AsfoajMb0QPHjZYZLdeKG/TfRzD5pe923nfgKikV2LjCOjjajINtWeeivbJA5MjFyo9+8y2XpcmsiG6isuAA==
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/es-dev-server/-/es-dev-server-1.22.0.tgz#052418af168d285bc468f3f34670e9dc96f083f3"
+  integrity sha512-QzJjq6fhprj86ecuiEUoHWZ9+5THV5UyhUPVasSVgcgYhul3Qm++5MYPWVnxkBX+/qsrNgzNGHtyy+dWPPj1ig==
   dependencies:
-    "@babel/core" "^7.4.5"
+    "@babel/core" "^7.3.3"
     "@babel/plugin-syntax-import-meta" "^7.2.0"
-    "@babel/preset-env" "^7.4.5"
+    "@babel/preset-env" "^7.0.0"
     "@open-wc/building-utils" "^2.10.2"
     "@types/minimatch" "^3.0.3"
     babel-plugin-bare-import-rewrite "^1.5.1"
@@ -4111,7 +4111,7 @@ es-dev-server@^1.21.0:
     command-line-args "^5.0.2"
     command-line-usage "^5.0.5"
     debounce "^1.2.0"
-    deepmerge "^3.3.0"
+    deepmerge "^3.2.0"
     es-module-lexer "0.3.9"
     get-stream "^5.1.0"
     is-stream "^2.0.0"
@@ -4124,7 +4124,7 @@ es-dev-server@^1.21.0:
     opn "^5.4.0"
     path-is-inside "^1.0.2"
     portfinder "^1.0.21"
-    resolve "^1.12.0"
+    resolve "^1.11.1"
     strip-ansi "^5.2.0"
     whatwg-url "^7.0.0"
 
@@ -8661,7 +8661,7 @@ resolve-url@^0.2.1:
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
 
-resolve@^1.1.6, resolve@^1.10.0, resolve@^1.11.0, resolve@^1.11.1, resolve@^1.12.0, resolve@^1.3.2:
+resolve@^1.1.6, resolve@^1.10.0, resolve@^1.11.0, resolve@^1.11.1, resolve@^1.3.2:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.12.0.tgz#3fc644a35c84a48554609ff26ec52b66fa577df6"
   integrity sha512-B/dOmuoAik5bKcD6s6nXDCjzUKnaDvdkRyAk6rsmsKLipWj4797iothd7jmmUhWTfinVMU+wc56rYKsit2Qy4w==
