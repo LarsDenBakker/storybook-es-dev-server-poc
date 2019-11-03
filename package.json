@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:demo:manual": "es-dev-server --config demo/manual/server.config.js --app-index demo/manual/index.html --node-resolve --open",
-    "build": "webpack"
+    "start:demo:manual": "es-dev-server --config demo/manual/server.config.js --app-index demo/manual/index.html --node-resolve --watch --open",
+    "build": "webpack && rollup -c rollup.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

@@ -8,9 +8,11 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'bundles'),
-    libraryTarget: 'window',
-    library: '__STORYBOOK_BUNDLE__',
-    filename: '[name].js'
+    libraryTarget: 'commonjs2',
+    filename: '[name]-cjs.js'
+  },
+  externals: {
+    'lit-html': ['lit-html']
   },
   devtool: 'source-map',
 };

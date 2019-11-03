@@ -1,0 +1,13 @@
+- Add `storybook-start` command
+  - serve generated index.html
+  - serve generated iframe.html (preview)
+  - read user's `.storybook/config.js` and inject into iframe.html
+- Add endpoint on es-dev-server get list of files based on glob patterns
+- Make API table working
+- Reload only the preview on story change
+- Add `storybook-build` command
+  - Build using rollup or webpack
+- Investigate having no iframe
+- Investigate caching strategies
+- Investigate tree shaking / compiling smaller bundle
+- Review if all addons are worth their weight
