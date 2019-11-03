@@ -35,20 +35,16 @@ async function transformMdxToJS(url) {
   );
 }
 
-module.exports = {
-  middlewares: [
-    async function mdxToJS(ctx, next) {
-      if (ctx.url.endsWith('.mdx')) {
-        const js = await transformMdxToJS(ctx.url);
-        if (js) {
-          ctx.status = 200;
-          ctx.body = js;
-          ctx.response.set('content-type', 'text/javascript');
-          return;
-        }
-      }
-
-      return next();
+module.exports = async function mdxToJS(ctx, next) {
+  if (ctx.url.endsWith('.mdx')) {
+    const js = await transformMdxToJS(ctx.url);
+    if (js) {
+      ctx.status = 200;
+      ctx.body = js;
+      ctx.response.set('content-type', 'text/javascript');
+      return;
     }
-  ]
+  }
+
+  return next();
 }

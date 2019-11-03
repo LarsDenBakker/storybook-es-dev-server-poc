@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-  <body>
-    <div id="root"></div>
-    <script>
-      window.PREVIEW_URL = '/preview.html'
-    </script>
-    <script type="module" src="/dist/manager.js"></script>
-  </body>
+
+<head>
+  <title>Storybook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+  <style>
+    #root[hidden],
+    #docs-root[hidden] {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="docs-root"></div>
+</body>
+
 </html>

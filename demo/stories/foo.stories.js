@@ -1,4 +1,4 @@
-import { html } from '../../../preview.js';
+import { html } from '../../preview.js';
 
 export default {
   title: 'Demo',

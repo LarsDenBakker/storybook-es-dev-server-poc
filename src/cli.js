@@ -1,10 +1,22 @@
 #!/usr/bin/env node
-const { startServer, createConfig, readCommandLineArgs } = require('es-dev-server');
-const serveHTML = require('./middlewares/serve-html');
+const { createConfig, startServer } = require('es-dev-server');
+const readCommandLineArgs = require('./command-line-args');
+const createServeStorybookMiddleware = require('./middlewares/serve-storybook');
+const mdxToJSMiddleware = require('./middlewares/mdx-to-js');
 
-const config = createConfig(readCommandLineArgs());
-config.middlewares = [
-  ...(config.middlewares || []),
-  serveHTML,
+const config = readCommandLineArgs();
+
+config.esDevServerConfig.customMiddlewares = [
+  createServeStorybookMiddleware({ storybookConfigDir: config.storybookServerConfig['storybook-config'] }),
+  mdxToJSMiddleware,
+  ...(config.customMiddlewares || []),
 ];
-startServer(config);
+
+startServer(createConfig(config.esDevServerConfig));
+
+['exit', 'SIGINT'].forEach(event => {
+  // @ts-ignore
+  process.on(event, () => {
+    process.exit(0);
+  });
+});
