@@ -1,0 +1,28 @@
+{
+  "name": "storybook-es-dev-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:demo:manual": "es-dev-server --config demo/manual/server.config.js --app-index demo/manual/index.html --node-resolve --open",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@mdx-js/mdx": "^1.5.1",
+    "@open-wc/demoing-storybook": "^0.4.4",
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "rollup": "^1.26.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.2"
+  }
+}
