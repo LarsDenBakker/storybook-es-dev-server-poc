@@ -1,7 +1,4 @@
-- Add `storybook-start` command
-  - serve generated index.html
-  - serve generated iframe.html (preview)
-  - read user's `.storybook/config.js` and inject into iframe.html
+- fix .storybook doesn't work
 - Add endpoint on es-dev-server get list of files based on glob patterns
 - Make API table working
 - Reload only the preview on story change
