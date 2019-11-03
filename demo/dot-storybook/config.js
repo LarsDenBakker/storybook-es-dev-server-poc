@@ -4,7 +4,7 @@ import {
   addDecorator,
   setCustomElements,
   withA11y,
-} from '../../preview.js';
+} from '../../index.js';
 import * as indexStories from '../stories/foo.stories.js';
 import * as demoCardStories from '../stories/demo-wc.card.stories.mdx';
 import * as withKnobsStories from '../stories/withWebComponentsKnobs.stories.mdx';

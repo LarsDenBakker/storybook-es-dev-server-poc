@@ -20,11 +20,11 @@ async function transformMdxToJS(url) {
 
   const src = await readFile(filepath, 'utf-8');
   const jsx = `
-    import { React, mdx } from '../../../preview.js'
+    import { React, mdx } from '../../../index.js'
     ${await mdx(src, { compilers, filepath })}
 
     // TODO VVV
-  `.replace('@storybook/addon-docs/blocks', '../../../preview.js');
+  `.replace('@storybook/addon-docs/blocks', '../../../index.js');
 
   return transformAsync(jsx, { filename: filepath,
       plugins: [

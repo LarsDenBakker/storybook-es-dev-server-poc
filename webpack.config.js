@@ -1,18 +1,26 @@
 const path = require('path');
 
-module.exports = {
-  entry: {
-    manager: './libs/manager.js',
-    preview: './libs/preview.js',
+module.exports = [
+  {
+    entry: './libs/manager.js',
+    mode: 'production',
+    devtool: 'source-map',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'manager.js'
+    },
   },
-  mode: 'development',
-  output: {
-    path: path.resolve(__dirname, 'bundles'),
-    libraryTarget: 'commonjs2',
-    filename: '[name]-cjs.js'
+  {
+    entry: './libs/preview.js',
+    mode: 'production',
+    devtool: 'source-map',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      libraryTarget: 'commonjs2',
+      filename: 'preview-cjs.js'
+    },
+    externals: {
+      'lit-html': ['lit-html']
+    },
   },
-  externals: {
-    'lit-html': ['lit-html']
-  },
-  devtool: 'source-map',
-};
+]

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "module": "index.js",
   "scripts": {
     "start:demo": "node src/cli.js -s ./demo/dot-storybook --node-resolve --watch --open",
     "build": "webpack && rollup -c rollup.config.js"
