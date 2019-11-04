@@ -1,7 +1,6 @@
 - fix .storybook doesn't work
 - Add endpoint on es-dev-server get list of files based on glob patterns
-- Make API table working
-- Reload only the preview on story change
+- Run preset config (web components and generic)
 - Add `storybook-build` command
   - Build using rollup or webpack
 - Investigate having no iframe
