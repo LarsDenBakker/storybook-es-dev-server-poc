@@ -4,8 +4,8 @@ const { readCommandLineArgs: esDevServerCommandLineArgs } = require('es-dev-serv
 module.exports = function readCommandLineArgs() {
   const optionDefinitions = [
     {
-      name: 'storybook-config',
-      alias: 's',
+      name: 'config-dir',
+      alias: 'd',
       type: String,
       defaultValue: './.storybook',
       description: 'Location of storybook configuration',
