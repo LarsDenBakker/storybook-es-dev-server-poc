@@ -1,4 +1,3 @@
-- fix .storybook doesn't work
 - Add endpoint on es-dev-server get list of files based on glob patterns
 - Run preset config (web components and generic)
 - Add `storybook-build` command
