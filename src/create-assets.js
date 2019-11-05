@@ -9,18 +9,39 @@ function createContentHash(content) {
     .digest('hex');
 }
 
-module.exports = function getAssets({ storybookConfigDir }) {
+module.exports = function getAssets({ rootDir, storybookConfigDir }) {console.log('storybookConfigDir', storybookConfigDir)
+  const managerPath = path.join(__dirname, 'index.html');
+  const iframePath = path.join(__dirname, 'iframe.html');
+  const managerHeadPath = path.join(process.cwd(), storybookConfigDir, 'manager-head.html');
+  const previewBodyPath = path.join(process.cwd(), storybookConfigDir, 'preview-body.html');
+  const previewHeadPath = path.join(process.cwd(), storybookConfigDir, 'preview-head.html');
+
   const managerCode = fs.readFileSync(path.join(__dirname, '..', 'dist', 'manager.js'), 'utf-8');
   const managerHash = createContentHash(managerCode);
-  const managerPath = `/storybook-manager-${managerHash}.js`
+  const managerScriptSrc = `/storybook-manager-${managerHash}.js`
 
-  let indexHTML = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8');
-  indexHTML = indexHTML.replace('</body>', `<script src="${managerPath}"></script>`);
+  let indexHTML = fs.readFileSync(managerPath, 'utf-8');
+  if (fs.existsSync(managerHeadPath)) {
+    const managerHead = fs.readFileSync(managerHeadPath, 'utf-8');
+    indexHTML = indexHTML.replace('</head>',`${managerHead}</head>`);
+  }
 
-  let iframeHTML = fs.readFileSync(path.join(__dirname, 'iframe.html'), 'utf-8');
+  indexHTML = indexHTML.replace('</body>', `<script src="${managerScriptSrc}"></script>`);
+
+  let iframeHTML = fs.readFileSync(iframePath, 'utf-8');
+  if (fs.existsSync(previewHeadPath)) {
+    const previewHead = fs.readFileSync(previewHeadPath, 'utf-8');
+    iframeHTML = iframeHTML.replace('</head>',`${previewHead}</head>`);
+  }
+
+  if (fs.existsSync(previewBodyPath)) {
+    const previewBody = fs.readFileSync(previewBodyPath, 'utf-8');
+    iframeHTML = iframeHTML.replace('</body>',`${previewBody}</body>`);
+  }
+
   iframeHTML = iframeHTML.replace('</body>', `<script type="module" src="${storybookConfigDir}/config.js"></script>`)
 
   return {
-    managerCode, managerPath, indexHTML, iframeHTML,
+    managerCode, managerScriptSrc, indexHTML, iframeHTML,
   };
 }

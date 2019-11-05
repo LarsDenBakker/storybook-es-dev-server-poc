@@ -7,7 +7,7 @@ const mdxToJSTransformer = require('./transformers/mdx-to-js');
 const createAssets = require('./create-assets');
 
 const config = readCommandLineArgs();
-const storybookConfigDir = config.storybookServerConfig['storybook-config'];
+const storybookConfigDir = config.storybookServerConfig['config-dir'];
 const assets = createAssets({ storybookConfigDir });
 
 config.esDevServerConfig.middlewares = [
