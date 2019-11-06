@@ -1,11 +1,25 @@
-import { Story, Preview, Meta, Props, action, html, withKnobs, text, number, withWebComponentsKnobs } from '../../index.js';
+import {
+  Story,
+  Preview,
+  Meta,
+  Props,
+  action,
+  html,
+  withKnobs,
+  text,
+  number,
+  withWebComponentsKnobs
+} from "../../index.js";
 
-import '../components/demo-wc-card.js';
+import "../components/demo-wc-card.js";
 
 <Meta
   title="Demo Card|Docs"
   decorators={[withKnobs, withWebComponentsKnobs]}
-  parameters={{ component: 'demo-wc-card', options: { selectedPanel: 'storybookjs/knobs/panel' } }}
+  parameters={{
+    component: "demo-wc-card",
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
 />
 
 # Demo Web Component Card
@@ -27,11 +41,11 @@ yarn add @foo/demo-wc-card
 ```
 
 ```js
-import '@foo/demo-wc-card/demo-wc-card.js';
+import "@foo/demo-wc-card/demo-wc-card.js";
 ```
 
 <Preview withToolbar>
-  <Story name="Simple" height="220px">
+  <Story name="Simple">
     {html`
       <demo-wc-card>Hello World</demo-wc-card>
     `}
@@ -51,15 +65,17 @@ Click on canvas and then knobs to see and modify the public api.
 
 ###### Header
 
-<Story name="Custom Header" height="220px">
+<Story name="Custom Header">
   {html`
-    <demo-wc-card header="Harry Potter">A character that is part of a book series...</demo-wc-card>
+    <demo-wc-card header="Harry Potter"
+      >A character that is part of a book series...</demo-wc-card
+    >
   `}
 </Story>
 
 ###### Back Side
 
-<Story name="Show Back" height="220px">
+<Story name="Show Back">
   {html`
     <demo-wc-card back-side>Hello World</demo-wc-card>
   `}
@@ -67,9 +83,12 @@ Click on canvas and then knobs to see and modify the public api.
 
 ###### Providing Rows
 
-<Story name="Provide Rows" height="220px">
+<Story name="Provide Rows">
   {() => {
-    const rows = [{ header: 'health', value: '200' }, { header: 'mana', value: '100' }];
+    const rows = [
+      { header: "health", value: "200" },
+      { header: "mana", value: "100" }
+    ];
     return html`
       <demo-wc-card back-side .rows=${rows}>
         A card with data on the back

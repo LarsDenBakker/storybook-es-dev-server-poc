@@ -6,14 +6,15 @@
   "module": "index.js",
   "scripts": {
     "start:demo": "node src/cli.js --config-dir ./demo/.storybook --node-resolve --watch --open",
+    "storybook": "node src/cli.js --config-dir ./demo/.storybook --node-resolve --watch --open",
     "build": "webpack && rollup -c rollup.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@mdx-js/mdx": "^1.5.1",
-    "@open-wc/demoing-storybook": "^0.4.4",
-    "es-dev-server": "^1.21.0",
+    "@open-wc/demoing-storybook": "^0.4.5",
+    "es-dev-server": "^1.23.0",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
     "webpack": "^4.41.2",

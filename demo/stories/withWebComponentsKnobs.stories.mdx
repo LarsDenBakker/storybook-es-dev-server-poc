@@ -1,12 +1,26 @@
-import { Story, Preview, Meta, Props, action, html, withKnobs, text, number, withWebComponentsKnobs } from '../../index.js';
+import {
+  Story,
+  Preview,
+  Meta,
+  Props,
+  action,
+  html,
+  withKnobs,
+  text,
+  number,
+  withWebComponentsKnobs
+} from "../../index.js";
 
-import '../components/demo-wc-card.js';
-import '../components/fake-input.js';
+import "../components/demo-wc-card.js";
+import "../components/fake-input.js";
 
 <Meta
   title="Decorators|WithWebComponentKnobs"
   decorators={[withKnobs, withWebComponentsKnobs]}
-  parameters={{ component: 'demo-wc-card', options: { selectedPanel: 'storybookjs/knobs/panel' } }}
+  parameters={{
+    component: "demo-wc-card",
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
 />
 
 # WithWebComponentsKnobs
@@ -26,7 +40,7 @@ import { withKnobs, withWebComponentsKnobs } from '@open-wc/demoing-storybook';
   parameters={{ component: 'demo-wc-card', options: { selectedPanel: 'storybookjs/knobs/panel' } }}
 />
 
-<Story name="Custom Header" height="220px">
+<Story name="Custom Header" >
   {html`
     <demo-wc-card header="Harry Potter">A character that is part of a book series...</demo-wc-card>
   `}
@@ -36,16 +50,16 @@ import { withKnobs, withWebComponentsKnobs } from '@open-wc/demoing-storybook';
 **CSF**
 
 ```js
-import { html } from 'lit-html';
-import { withKnobs, withWebComponentsKnobs } from '@open-wc/demoing-storybook';
+import { html } from "lit-html";
+import { withKnobs, withWebComponentsKnobs } from "@open-wc/demoing-storybook";
 
-import '../demo-wc-card.js';
+import "../demo-wc-card.js";
 
 export default {
-  title: 'Card|Playground',
-  component: 'demo-wc-card',
+  title: "Card|Playground",
+  component: "demo-wc-card",
   decorators: [withKnobs, withWebComponentsKnobs],
-  parameters: { options: { selectedPanel: 'storybookjs/knobs/panel' } },
+  parameters: { options: { selectedPanel: "storybookjs/knobs/panel" } }
 };
 
 export const singleComponent = () => html`
@@ -57,7 +71,7 @@ export const singleComponent = () => html`
 
 Don't forget to switch to Canvas if you wanna see the knobs.
 
-<Story name="Example output" height="220px">
+<Story name="Example output">
   {html`
     <demo-wc-card header="Harry Potter">
       A character that is part of a book series...
@@ -70,10 +84,10 @@ Don't forget to switch to Canvas if you wanna see the knobs.
 By adding knobs within the template you can provide additional knobs for this content.
 
 <Preview withToolbar>
-  <Story name="Provide own light dom" height="220px">
+  <Story name="Provide own light dom">
     {html`
       <demo-wc-card>
-        <p>${text('Content', 'Some text', 'Properties')}</p>
+        <p>${text("Content", "Some text", "Properties")}</p>
       </demo-wc-card>
     `}
   </Story>
@@ -86,7 +100,7 @@ By default it will show knobs for all elements of the current "component".
 You can set the component for the whole file via
 
 ```js
-<Meta parameters={{ component: 'demo-wc-card' }} />
+<Meta parameters={{ component: "demo-wc-card" }} />
 ```
 
 or per story
@@ -97,7 +111,7 @@ or per story
 
 That means even if you have multiple components in your dom you will have knobs for all of them.
 
-<Story name="Knobs for current Component" height="220px">
+<Story name="Knobs for current Component" style="overflow: hidden;">
   {html`
     <demo-wc-card header="Harry Potter">The main character</demo-wc-card>
     <demo-wc-card header="Lord Voldemort">An evil wizard</demo-wc-card>
@@ -121,8 +135,9 @@ The parameter is `parameters.customElements.querySelectorAll`.
 
 <Story
   name="Provide own querySelectorAll"
-  height="220px"
-  parameters={{ customElements: { querySelectorAll: 'demo-wc-card:nth-of-type(1)' } }}
+  parameters={{
+    customElements: { querySelectorAll: "demo-wc-card:nth-of-type(1)" }
+  }}
 >
   {html`
     <demo-wc-card header="Harry Potter">The main character</demo-wc-card>
@@ -178,9 +193,11 @@ The parameter is `parameters.customElements.filterProperties`.
 
 <Story
   name="Debugging helper"
-  height="220px"
   parameters={{
-    customElements: { filterProperties: ['focused'], querySelectorAll: 'fake-input' },
+    customElements: {
+      filterProperties: ["focused"],
+      querySelectorAll: "fake-input"
+    }
   }}
 >
   {html`

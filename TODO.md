@@ -1,9 +1,6 @@
 - Add endpoint on es-dev-server get list of files based on glob patterns
-- Run preset config (web components and generic)
 - Add `storybook-build` command
   - Build using rollup or webpack
-- Investigate having no iframe
-- Investigate caching strategies
 - Investigate tree shaking / compiling smaller bundle
 - Review if all addons are worth their weight
 - fix TODOs in mdx-to-js transformer
